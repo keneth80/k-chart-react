@@ -1,0 +1,62 @@
+{
+  "name": "@keneth80/k-chart-react",
+  "version": "0.1.0",
+  "description": "React wrapper component for @keneth80/k-chart.",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "default": "./lib/index.js"
+    }
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run typecheck"
+  },
+  "keywords": [
+    "react",
+    "nextjs",
+    "chart",
+    "d3",
+    "canvas",
+    "webgl",
+    "kchart"
+  ],
+  "author": "Kenneth Kang",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keneth80/k-chart-react.git"
+  },
+  "bugs": {
+    "url": "https://github.com/keneth80/k-chart-react/issues"
+  },
+  "homepage": "https://github.com/keneth80/k-chart-react#readme",
+  "peerDependencies": {
+    "@keneth80/k-chart": "^1.2.0",
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20"
+  },
+  "devDependencies": {
+    "@keneth80/k-chart": "^1.2.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^6.0.3"
+  }
+}
