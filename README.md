@@ -56,11 +56,43 @@ export function DashboardChart({ data }: { data: Point[] }) {
       grid={{ visible: true, y: true }}
       legend={{ visible: true, placement: 'top', selectable: true }}
       tooltip={{ visible: true }}
+      zoom={{
+        enabled: true,
+        mode: 'both',
+        direction: 'x',
+        resetOnDoubleClick: true
+      }}
       style={{ width: '100%', height: 420 }}
     />
   );
 }
 ```
+
+## Zoom
+
+`@keneth80/k-chart-react@0.2.0` targets `@keneth80/k-chart@1.3.0` and supports the chart-level zoom API.
+
+```tsx
+<KChart<Point>
+  data={data}
+  axes={[
+    { field: 'x', type: 'number', placement: 'bottom' },
+    { field: 'value', type: 'number', placement: 'left' }
+  ]}
+  series={series}
+  zoom={{
+    enabled: true,
+    mode: 'both',
+    direction: 'x',
+    scaleExtent: [1, 80],
+    resetOnDoubleClick: true
+  }}
+/>
+```
+
+- `mode: 'wheel'`: wheel/trackpad zoom and drag pan.
+- `mode: 'select'`: drag-selection zoom.
+- `mode: 'both'`: wheel/trackpad zoom and drag-selection zoom.
 
 ## Props
 
