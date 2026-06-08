@@ -23,6 +23,7 @@ export function KChart<T = any>({
 }: KChartReactProps<T>) {
   const rootRef = useRef<HTMLDivElement | null>(null);
   const chartRef = useRef<KChartController<T> | null>(null);
+  const rootClassName = ['kchart-react-root', className].filter(Boolean).join(' ');
 
   useEffect(() => {
     if (!rootRef.current) {
@@ -68,7 +69,7 @@ export function KChart<T = any>({
     return () => observer.disconnect();
   }, []);
 
-  return <div ref={rootRef} className={className} style={style} />;
+  return <div ref={rootRef} className={rootClassName} style={style} />;
 }
 
 export type { KChartController };

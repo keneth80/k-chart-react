@@ -98,6 +98,19 @@ export function DashboardChart({ data }: { data: Point[] }) {
 
 `KChart` accepts the same configuration as `createKChart`, except `selector`.
 
+The rendered root element always includes the `kchart-react-root` class. Give the parent or the component itself a stable height so `ResizeObserver` can resize the chart without layout growth loops.
+
+```css
+.chart-shell {
+  height: 420px;
+}
+
+.chart-shell .kchart-react-root {
+  width: 100%;
+  height: 100%;
+}
+```
+
 Additional React-only props:
 
 - `className`: class name for the root div.
